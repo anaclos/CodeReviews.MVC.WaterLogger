@@ -1,14 +1,19 @@
-# Console Exercise Tracker
+# MVC.WaterLogger
 ## Description
-This program allows you to store exercises in a database.
+This program allows you to store the water you drink at a given time in a database.
 ## Database
-For the program to work, a database must be created in SQL Server. In this case, Windows credentials were used.
-## Configuration
-The person who wants to test or use this program must modify the ConnectionString in appsettings.json and adapt it to their SQLServer configuration.
-## Limitations
-Only the last 10 exercises are displayed.
-There is no daily hour limit.
-Only the last record can be deleted or edited.
-## Improvements
-Select a month and year to display a summary of Exercises.
-Improve the way it is displayed.
+It uses a SQLite database named WaterLogger.db, which has not been uploaded to GitHub.
+
+The connection string name is found in the appsettings.json file, where you can modify the database name.
+## Table
+To create the drinking_water table, you can use this script or do it manually.
+
+CREATE TABLE "drinking_water" (
+"Id" INTEGER,
+"Date" TEXT,
+"Unit" TEXT,
+"Quantity" INTEGER,
+PRIMARY KEY("Id" AUTOINCREMENT)
+)
+## Enhancements
+Added Unit to reference the type of unit of measurement used (Glass, Bottle, Big Bottle)
